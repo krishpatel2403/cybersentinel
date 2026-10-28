@@ -1,0 +1,85 @@
+name: Bug report
+description: Report reproducible behavior that is wrong, broken, or misleading.
+title: "[bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve CyberSentinel. Do **not** include secrets, real credentials, personal data, or production data.
+        For a security vulnerability, follow [SECURITY.md](https://github.com/your-org/cybersentinel/blob/main/SECURITY.md) instead of opening a public issue.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear description of the actual behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Sign in as ...
+        2. Open ...
+        3. Click ...
+        4. See ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Authentication / sessions
+        - Dashboard / analytics
+        - Assets
+        - Findings / export
+        - Events
+        - Threat intel
+        - Copilot / AI
+        - Settings / profile
+        - Accessibility / responsive UI
+        - Build / CI / tooling
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser, Node version, npm version, local SQLite or Turso, demo mode on/off.
+      placeholder: Windows 11, Chrome 141, Node 24.19, npm 11.17, local SQLite, demo mode on
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, screenshots, or failing test output
+      description: Redact secrets, cookies, tokens, and personal data.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for a duplicate.
+          required: true
+        - label: This is not a security vulnerability (those go through SECURITY.md).
+          required: true
+        - label: I removed secrets and real data from this report.
+          required: true

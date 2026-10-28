@@ -1,0 +1,64 @@
+name: Feature request
+description: Suggest a focused improvement that supports the core triage workflow.
+title: "[feat]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        CyberSentinel is intentionally scoped. Features that turn it into a scanner, SIEM, SOAR, or GRC platform are out of scope.
+        Read [ROADMAP.md](https://github.com/your-org/cybersentinel/blob/main/ROADMAP.md) and [docs/PLAN.md](https://github.com/your-org/cybersentinel/blob/main/docs/PLAN.md) first.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem does this solve? Describe the workflow, not just the UI.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Keep it as small as possible. Note any alternatives you considered.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Authentication / access control
+        - Dashboard / analytics
+        - Assets
+        - Findings / export
+        - Events
+        - Threat intel
+        - Copilot / AI
+        - Settings
+        - Accessibility / responsive UI
+        - Developer experience / CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Security and data impact
+      description: Does this add new input, external data, permissions, secrets, or AI context? What could go wrong?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked the roadmap and existing issues.
+          required: true
+        - label: This fits the project's stated scope and non-goals.
+          required: true
