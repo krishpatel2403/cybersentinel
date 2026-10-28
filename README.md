@@ -4,7 +4,9 @@
 
 CyberSentinel is a portfolio-grade, full-stack demo that turns a scattered security backlog into an explainable posture story: inventory assets, rank findings by real exposure, read simulated telemetry, cross-reference CISA advisories, and ask a grounded analyst copilot what to fix first.
 
-It is built to be **run locally with no paid services**. Every screen is backed by a real database, typed server actions, validation, authorization, and tests. The data is seeded and clearly labeled; the security engineering is deliberate.
+**Live demo:** <https://cybersentinel-eta.vercel.app> · **Source:** <https://github.com/krishpatel2403/cybersentinel> · **CI:** [GitHub Actions](https://github.com/krishpatel2403/cybersentinel/actions/workflows/ci.yml)
+
+It runs **locally with no paid services**, and the portfolio demo is deployed on Vercel's free Hobby tier with a free Turso libSQL database. Every screen is backed by a real database, typed server actions, validation, authorization, and tests. The data is seeded and clearly labeled; the security engineering is deliberate.
 
 > Educational portfolio project. Not a production security product, scanner, SIEM, or source of professional advice.
 
@@ -68,7 +70,7 @@ Node **20.9+** is required by Next.js. This project was developed and verified o
 ### Windows PowerShell
 
 ```powershell
-git clone <your-repo-url> cybersentinel
+git clone https://github.com/krishpatel2403/cybersentinel.git cybersentinel
 cd cybersentinel
 npm.cmd install
 npm.cmd run setup
@@ -78,7 +80,7 @@ npm.cmd run dev
 ### macOS / Linux
 
 ```bash
-git clone <your-repo-url> cybersentinel
+git clone https://github.com/krishpatel2403/cybersentinel.git cybersentinel
 cd cybersentinel
 npm install
 npm run setup
@@ -96,7 +98,7 @@ Shown on the login screen only when `NEXT_PUBLIC_DEMO_MODE=true`:
 | Administrator    | `admin@cybersentinel.dev`   | `DemoAdmin!2026`   |
 | Security analyst | `analyst@cybersentinel.dev` | `DemoAnalyst!2026` |
 
-**Change or remove these before any public deployment.** The analyst can use the operational views; only the administrator can open the audit log and manage users' elevated actions.
+These credentials power the **public portfolio demo only**, which contains seeded data. Change or remove them before storing real data. The analyst can use the operational views; only the administrator can open the audit log and manage users' elevated actions.
 
 ### Reset the demo data
 
@@ -217,14 +219,14 @@ docs/                 Plan, architecture, threat model, deployment, learning pat
 
 Copy `.env.example` to `.env` and review the comments. The important variables:
 
-| Variable                                | Required   | Notes                                                         |
-| --------------------------------------- | ---------- | ------------------------------------------------------------- |
-| `SESSION_SECRET`                        | Production | At least 32 characters; `setup` generates one.                |
-| `NEXT_PUBLIC_DEMO_MODE`                 | No         | `true` shows demo credentials on login. Set `false` publicly. |
-| `TURSO_DATABASE_URL`                    | No         | Switches from local SQLite to hosted libSQL.                  |
-| `TURSO_AUTH_TOKEN`                      | With Turso | Required when the URL is set.                                 |
-| `AI_BASE_URL`, `AI_API_KEY`, `AI_MODEL` | No         | All three enable external AI.                                 |
-| `SEED_ADMIN_*`, `SEED_ANALYST_*`        | No         | Credentials used by the seed script only.                     |
+| Variable                                | Required   | Notes                                                             |
+| --------------------------------------- | ---------- | ----------------------------------------------------------------- |
+| `SESSION_SECRET`                        | Production | At least 32 characters; `setup` generates one.                    |
+| `NEXT_PUBLIC_DEMO_MODE`                 | No         | `true` shows demo credentials; use only for a seeded public demo. |
+| `TURSO_DATABASE_URL`                    | No         | Switches from local SQLite to hosted libSQL.                      |
+| `TURSO_AUTH_TOKEN`                      | With Turso | Required when the URL is set.                                     |
+| `AI_BASE_URL`, `AI_API_KEY`, `AI_MODEL` | No         | All three enable external AI.                                     |
+| `SEED_ADMIN_*`, `SEED_ANALYST_*`        | No         | Credentials used by the seed script only.                         |
 
 Secrets belong in the host's environment settings, never in the repository. `.env` is gitignored.
 

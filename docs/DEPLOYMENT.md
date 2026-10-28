@@ -1,6 +1,8 @@
 # Deployment guide
 
-This guide covers a local run, a hosted demo on Vercel with Turso, and the hardening steps required before exposing the app. **No deployment has been performed as part of this repository's verification.** The commands below are guidance, not a claim that they were executed against your accounts.
+This guide covers a local run, a hosted demo on Vercel with Turso, and the hardening steps required before exposing the app.
+
+**Current demo:** <https://cybersentinel-eta.vercel.app> runs on Vercel with a Turso libSQL database. GitHub Actions CI passes on `master`. The commands below remain reproducible guidance; verify them against your own accounts rather than assuming they match this deployment.
 
 ## 1. Choose a target
 

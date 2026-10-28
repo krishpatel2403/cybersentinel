@@ -10,7 +10,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [0.1.0] — 2026-10-28
 
-First portfolio MVP. Local-first, seeded demo data, no production deployment claimed.
+First portfolio MVP. Local-first with seeded demo data, deployed as a public demo on Vercel with Turso; CI passing.
 
 ### Added
 
@@ -43,6 +43,7 @@ First portfolio MVP. Local-first, seeded demo data, no production deployment cla
 - ESLint flat config, Prettier with Tailwind sorting, and npm scripts for every quality gate.
 - README, product plan, architecture, threat model, deployment guide, learning path, roadmap, contribution guide, and security policy.
 - GitHub Actions CI, Dependabot, issue templates, and a pull request template.
+- Public demo at <https://cybersentinel-eta.vercel.app>, backed by Turso libSQL.
 
 ### Changed
 
@@ -66,7 +67,8 @@ First portfolio MVP. Local-first, seeded demo data, no production deployment cla
 - CSP permits `'unsafe-inline'` for Next.js bootstrap scripts.
 - The 14-day trend is reconstructed, not an audited score history.
 - The CISA feed exceeds Next's 2 MB data-cache limit, producing a non-fatal warning.
-- No production deployment or independent security audit has been performed.
+- No independent security or accessibility audit has been performed.
+- The public demo uses seeded credentials and an in-memory rate limiter; it is not suitable for real security data.
 
-[Unreleased]: https://github.com/your-org/cybersentinel/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/your-org/cybersentinel/releases/tag/v0.1.0
+[Unreleased]: https://github.com/krishpatel2403/cybersentinel/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/krishpatel2403/cybersentinel/releases/tag/v0.1.0
